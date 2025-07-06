@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+body,
+h1 {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template:
+    'header header' 40px
+    'main aside' 1fr
+    'footer footer' 40px
+    / 1fr 200px;
+
+  @media (width <= 600px) {
+    /* 1カラムにする */
+    grid-template:
+      'header' 40px
+      'main' 1fr
+      'aside' 40px
+      'footer' 40px;
+  }
+}
+
+h1 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+header,
+main,
+aside,
+footer {
+  /* コンテンツを中央寄せ */
+  display: grid;
+  place-items: center;
+}
+
+header {
+  background: #abd0ce;
+  grid-area: header;
+}
+
+main {
+  background: #f0e5de;
+  grid-area: main;
+}
+
+aside {
+  background: #d9d4cf;
+  grid-area: aside;
+}
+
+footer {
+  background: #7c7877;
+  color: #fff;
+  grid-area: footer;
+}
